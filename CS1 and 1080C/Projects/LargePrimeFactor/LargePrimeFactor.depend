@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1487263570 source:/home/vuatamaca/Dropbox/Projects/LargePrimeFactor/main.cpp
+	<iostream>
+	<stdio.h>
+	<cmath>
+

@@ -1,0 +1,19 @@
+dice_game.cpp (pseudocode)
+
+do
+{
+
+A = take input("Enter the value of dice 1");
+B = take input("Enter the value of dice 2");
+
+add A + B = x
+
+if x = (7 || 9 || 11)
+	disp("You Win!");
+end
+
+if x = (2 || 3 || 5)
+	disp("You Lose");
+end
+
+} while (winning numbers have not been "rolled" have not won)

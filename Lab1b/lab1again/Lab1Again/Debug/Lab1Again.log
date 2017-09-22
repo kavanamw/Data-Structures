@@ -1,0 +1,10 @@
+﻿  Lab1Again.cpp
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(166): error C3646: 'c': unknown override specifier
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(194): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(195): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(200): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(201): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(206): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(207): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(212): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\vuata\google drive\data structures\code\lab1b\lab1again\lab1again\lab1again.cpp(213): warning C4244: '=': conversion from 'double' to 'int', possible loss of data

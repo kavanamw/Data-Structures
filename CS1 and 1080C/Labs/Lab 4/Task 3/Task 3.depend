@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1486584091 source:/home/vuatamaca/Dropbox/Labs/Lab 4/Task 3/main.cpp
+	<iostream>
+	<math.h>
+	<iomanip>
+

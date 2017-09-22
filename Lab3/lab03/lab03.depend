@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1504794900 source:/home/vuatamaca/Dropbox/Lab 3/lab03/main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<fstream>
+	<stdlib.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1485124662 source:/home/vuatamaca/Programming/Homework/Homework 2/dice_game/main.cpp
+	<iostream>
+	<cmath>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1484688851 source:/home/vuatamaca/Programming/Homework/Cone/main.cpp
+	<iostream>
+	<cmath>
+
