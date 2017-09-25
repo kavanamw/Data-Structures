@@ -9,7 +9,7 @@ class orderedlist
 {
 protected:
 	X *array[MaxElm];
-	int idx;
+	int idx = 0;
 public:
 	//initilizes the values to -9999
 	//works well
@@ -19,7 +19,7 @@ public:
 		for (int x = 0; x < MaxElm; x++)
 		{
 			array[x] = new X;
-			*array[x] = -9999;
+			*array[x] = 0;
 		}
 	}
 
@@ -29,35 +29,36 @@ public:
 		int temp, FirstInput = 0;
 		//sets first element to the begining of the array
 		//seems to work as intended
+		/*
 		if (idx == 0)
 		{
 			*array[0] = TempInput;
 			idx++;
-			FirstInput = *array[0];
+			//FirstInput = *array[0];
 			return;
 		}
+		*/
+		//prefill the array
+		*array[idx] = TempInput;
+		idx++;
 		//sort array
 		for (int t = 1; t < MaxElm; t++)
 		{
+			cout << "Array[t]: " << *array[t] << " " << "Array[t - 1]: " << " " << *array[t - 1] << endl;
 			//if element before is larger than current input
-			if (*array[t] > TempInput)
+			if (*array[t] > *array[t - 1])
 			{
-				///*
 				temp = *array[t];
 				*array[t] = TempInput;
-				*array[t + 1] = temp;
+				*array[t - 1] = temp;
 				idx++;
-				return;
-				//*/
 			}
 			//if element before is larger than current input
 			else
 			{
-				///*
-				*array[t + 1] = TempInput;
+				*array[t - 1] = TempInput;
 				idx++;
-				return;
-				//*/
+				//return;
 			}
 		}
 	}
@@ -73,10 +74,9 @@ public:
 	//functon to print the entire array begining to end after addition and sorting. 
 	void Print()
 	{
-		for (int j = 0; j < MaxElm; j++)
+		for (int j = 0; j < idx; j++)
 		{
-			//cout << "Here" << endl;
-			cout << *array[j] << endl;
+			cout << *array[j] << " ";
 		}
 	}
 	//function to remove a selected item from the list and re-sort it
@@ -115,13 +115,10 @@ int main()
 	L4.AddItem(18);
 	L4.AddItem(1);
 	L4.AddItem(2);
-	/*
 	L4.AddItem(10);
 	L4.AddItem(7);
 	L4.AddItem(9);
-	*/	
 	L4.Print();
 	cin.get();
 	return 0;
 }
-
