@@ -12,6 +12,7 @@ protected:
 	int idx;
 public:
 	//initilizes the values to -9999
+	//works well
 	void listTo0()
 	{
 		idx = 0;
@@ -21,16 +22,18 @@ public:
 			*array[x] = -9999;
 		}
 	}
+
 	//adds and sorts an item to the array of pointers
 	void AddItem(X TempInput)
 	{
-		int temp = 0;
+		int temp, FirstInput = 0;
 		//sets first element to the begining of the array
 		//seems to work as intended
 		if (idx == 0)
 		{
 			*array[0] = TempInput;
 			idx++;
+			FirstInput = *array[0];
 			return;
 		}
 		//sort array
@@ -56,6 +59,15 @@ public:
 				return;
 				//*/
 			}
+		}
+	}
+	//the first element gets overwritten in the AddItem function so here I readd it in the correct spot
+	void SortFirst()
+	{
+		for (int x = 0; x > idx; x++)
+		{
+			if (*array[x] < FirstInput)
+				*array[x + 1] = FirstInput;
 		}
 	}
 	//functon to print the entire array begining to end after addition and sorting. 
@@ -99,7 +111,6 @@ public:
 int main()
 {
 	orderedlist<int> L4;
-	//L4.IsEmpty();
 	L4.listTo0();
 	L4.AddItem(18);
 	L4.AddItem(1);
