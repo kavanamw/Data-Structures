@@ -2,7 +2,7 @@
 #include<iostream>
 #include<array>
 using namespace std;
-#define MaxElm 20
+#define MaxElm 5
 
 template<class X>
 class orderedlist
@@ -27,8 +27,12 @@ public:
 	void AddItem(X TempInput)
 	{
 		int temp, FirstInput, change = 0;
+		int Narray[MaxElm] = { 0 };
+		Narray[idx] = TempInput;
+		//cout << Narray[idx] << " ";
 		//sets first element to the begining of the array
 		//seems to work as intended
+		/*
 		if (idx == 0)
 		{
 			*array[0] = TempInput;
@@ -36,6 +40,7 @@ public:
 			//FirstInput = *array[0];
 			return;
 		}
+		*/
 		//prefill the array
 		//*array[idx] = TempInput;
 		//idx++;
@@ -44,28 +49,31 @@ public:
 		{
 			//cout << "Array[t]: " << *array[t] << " " << "Array[t - 1]: " << " " << *array[t - 1] << endl;
 			//if element before is larger than current input
-			if (*array[t] > *array[t - 1])
+			if (Narray[t] > Narray[t - 1])
 			{
-				temp = *array[t];
-				*array[t] = TempInput;
-				*array[t - 1] = temp;
+				temp = Narray[t];
+				Narray[t] = TempInput;
+				Narray[t - 1] = temp;
 				idx++;
+				return;
 			}
 			//if element before is larger than current input
 			else
 			{
-				*array[t - 1] = TempInput;
+				Narray[t - 1] = TempInput;
 				idx++;
 				//return;
 			}
 		}
+		cout << Narray[idx] << " ";
 	}
 	//functon to print the entire array begining to end after addition and sorting. 
 	void Print()
 	{
 		for (int j = 0; j < MaxElm - 1; j++)
 		{
-			cout << *array[j] << " ";
+			cout << "Here";
+			cout << Narray[j] << " ";
 		}
 	}
 	//function to remove a selected item from the list and re-sort it
@@ -106,8 +114,7 @@ int main()
 	L4.AddItem(2);
 	L4.AddItem(10);
 	L4.AddItem(7);
-	L4.AddItem(9);
-	L4.Print();
+	//L4.Print();
 	cin.get();
 	return 0;
 }
