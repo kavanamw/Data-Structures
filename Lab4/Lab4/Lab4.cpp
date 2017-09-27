@@ -26,10 +26,9 @@ public:
 	//adds and sorts an item to the array of pointers
 	void AddItem(X TempInput)
 	{
-		int temp, FirstInput = 0;
+		int temp, FirstInput, change = 0;
 		//sets first element to the begining of the array
 		//seems to work as intended
-		/*
 		if (idx == 0)
 		{
 			*array[0] = TempInput;
@@ -37,14 +36,13 @@ public:
 			//FirstInput = *array[0];
 			return;
 		}
-		*/
 		//prefill the array
-		*array[idx] = TempInput;
-		idx++;
+		//*array[idx] = TempInput;
+		//idx++;
 		//sort array
-		for (int t = 1; t < MaxElm; t++)
+		for (int t = 1; t < idx; t++)
 		{
-			cout << "Array[t]: " << *array[t] << " " << "Array[t - 1]: " << " " << *array[t - 1] << endl;
+			//cout << "Array[t]: " << *array[t] << " " << "Array[t - 1]: " << " " << *array[t - 1] << endl;
 			//if element before is larger than current input
 			if (*array[t] > *array[t - 1])
 			{
@@ -62,19 +60,10 @@ public:
 			}
 		}
 	}
-	//the first element gets overwritten in the AddItem function so here I readd it in the correct spot
-	void SortFirst()
-	{
-		for (int x = 0; x > idx; x++)
-		{
-			if (*array[x] < FirstInput)
-				*array[x + 1] = FirstInput;
-		}
-	}
 	//functon to print the entire array begining to end after addition and sorting. 
 	void Print()
 	{
-		for (int j = 0; j < idx; j++)
+		for (int j = 0; j < MaxElm - 1; j++)
 		{
 			cout << *array[j] << " ";
 		}
