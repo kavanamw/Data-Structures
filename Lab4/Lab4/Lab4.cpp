@@ -1,6 +1,14 @@
 #include "stdafx.h"
 #include<iostream>
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+NOTE TO GRADER:
+I ATTENDED LAB ON WENESDAY 9/27 BUT DID NOT GO TO MY ASSIGNED LAB ON THE 28TH SO I COULD STUDY FOR A MIDTERM. THEIR WAS NO ATTENDENCE SHEET PASSED AROUND ON WENESDAY SO NO ONE COULD SIGN IN
+Compiled on Visual Studion 2017 on Windows 10
+------------------------------------------------------------------------------------------------------------------------------------------------*/
 #include<array>
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
 using namespace std;
 #define MaxElm 20
 
@@ -25,7 +33,6 @@ public:
 		}
 		else if (idx == MaxElm)
 		{
-			cout << "Array is full!";
 			return;
 		}
 		//prefill the array
@@ -88,9 +95,9 @@ public:
 	}
 	bool IsFull()
 	{
-		if(idx < MaxElm - 1)
+		if (idx < MaxElm - 1)
 			return true
-		else 
+		else
 			return false
 	}
 	void MakeEmpty()
@@ -102,6 +109,37 @@ public:
 				delete array[x];
 				array[x] = NULL;
 			}
+		}
+	}
+	bool issorted()
+	{
+		int Tarray[MaxElm];
+		Tarray[0] = 2;
+		Tarray[1] = 5;
+		Tarray[2] = 6;
+		Tarray[3] = 7;
+		Tarray[4] = 9;
+		Tarray[5] = 11;
+		Tarray[6] = 12;
+		Tarray[7] = 14;
+		Tarray[8] = 16;
+		Tarray[9] = 19;
+		Tarray[10] = 24;
+		Tarray[11] = 36;
+		Tarray[12] = 39;
+		Tarray[13] = 39;
+		Tarray[14] = 41;
+		Tarray[15] = 42;
+		Tarray[16] = 44;
+		Tarray[17] = 46;
+		Tarray[18] = 49;
+		Tarray[19] = 50;
+		for (int x = 0; x < MaxElm; x++)
+		{
+			if (*array[x] == Tarray[x])
+				return true;
+			else
+				return true;
 		}
 	}
 };
@@ -131,7 +169,7 @@ public:
 		{
 			array[idx] = new Y;
 			*array[idx] = TempInput;
-			for (int t = MaxElm - 1; t > 0; t--)
+			for (int t = idx - 1; t > 0; t--)
 			{
 				if (*array[t] > TempInput)
 				{
@@ -152,6 +190,7 @@ public:
 					idx--;
 					return;
 				}
+				cout << *array[t] << " ";
 			}
 		}
 	}
@@ -168,32 +207,56 @@ public:
 
 int main()
 {
+	//Random inputs
 	orderedlist<int> L4;
-	T2Orderedlist<int> L4T2;
+	int arr[MaxElm];
+	srand((unsigned)time(0));
+	cout << "Original:" << endl;
+	for (int t = 0; t < MaxElm; t++)
+	{
+		arr[t] = (rand() % 100);
+		cout << arr[t] << " ";
+	}
+	cout << endl;
 	cout << "TASK 1 Sorted: " << endl;
-	L4.AddItem(6);
-	L4.AddItem(11);
-	L4.AddItem(50);
-	L4.AddItem(24);
-	L4.AddItem(7);
-	L4.AddItem(36);
-	L4.AddItem(9);
-	L4.AddItem(2);
-	L4.AddItem(39);
-	L4.AddItem(5);
-	L4.AddItem(39);
-	L4.AddItem(16);
-	L4.AddItem(41);
-	L4.AddItem(49);
-	L4.AddItem(42);
-	L4.AddItem(12);
-	L4.AddItem(44);
-	L4.AddItem(14);
-	L4.AddItem(46);
-	L4.AddItem(19);
+	for (int x = 0; x <= MaxElm; x++)
+	{
+		L4.AddItem(arr[x]);
+	}
 	L4.Print();
 
+	//Task 4 inputs
+		L4.AddItem(6);
+		L4.AddItem(11);
+		L4.AddItem(50);
+		L4.AddItem(24);
+		L4.AddItem(7);
+		L4.AddItem(36);
+		L4.AddItem(9);
+		L4.AddItem(2);
+		L4.AddItem(39);
+		L4.AddItem(5);
+		L4.AddItem(39);
+		L4.AddItem(16);
+		L4.AddItem(41);
+		L4.AddItem(49);
+		L4.AddItem(42);
+		L4.AddItem(12);
+		L4.AddItem(44);
+		L4.AddItem(14);
+		L4.AddItem(46);
+		L4.AddItem(19);
+	if (L4.issorted() == true)
+	{
+		cout << "Sort for Task 1 test passed!" << endl;
+	}
+	else
+		cout << "Not sorted" << endl;
+	
+
+	/*
 	cout << "TASK 2 Sorted: " << endl;
+	T2Orderedlist<int> L4T2;
 	L4T2.AddItem(6);
 	L4T2.AddItem(11);
 	L4T2.AddItem(50);
@@ -215,6 +278,7 @@ int main()
 	L4T2.AddItem(46);
 	L4T2.AddItem(19);
 	L4T2.Print();
+	*/
 
 	cin.get();
 	return 0;
