@@ -4,70 +4,42 @@
 #include <stdlib.h>
 using namespace std;
 
+template<typename X>
 struct Node
 {
-	int data;
-	struct Node *next;
+	X data;
+	Node *next;
 };
 
-void push(struct Node** head_ref, int new_data)
+template<class Y>
+class OrderedList
 {
-
-	struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
-	new_node->data = new_data;
-	new_node->next = (*head_ref);
-	(*head_ref) = new_node;
-}
-
-void insertAfter(struct Node* prev_node, int new_data)
-{
-	if (prev_node == NULL)
+public:
+	void AddItem(Node<Y>)
 	{
-		printf("the given previous node cannot be NULL");
-		return;
+		Node<Y>* new_node; 
+		*new_node->data = new_data;
+		*new_node->next = (*head_ref);
+		(*head_ref) = new_node;
 	}
-	struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
-	new_node->data = new_data;
-	new_node->next = prev_node->next;
-	prev_node->next = new_node;
-}
-
-void append(struct Node** head_ref, int new_data)
-{
-	struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
-	struct Node *last = *head_ref;  
-	new_node->data = new_data;
-	new_node->next = NULL;
-	if (*head_ref == NULL)
+	void printList(Node<Y> *node)
 	{
-		*head_ref = new_node;
-		return;
+		while (node != NULL)
+		{
+			printf(" %d ", node->data);
+			node = node->next;
+		}
 	}
-	while (last->next != NULL)
-		last = last->next;
-
-	last->next = new_node;
-	return;
-}
-
-void printList(struct Node *node)
-{
-	while (node != NULL)
-	{
-		printf(" %d ", node->data);
-		node = node->next;
-	}
-}
+};
 
 int main()
 {
-	struct Node* head = NULL;
-	append(&head, 6);
-	push(&head, 7);
-	push(&head, 1);
-	append(&head, 4);
-	insertAfter(head->next, 8);
-	printList(head);
+	OrderedList<int> L5T1;
+	Node<int>* head = NULL;
+	L5T1.AddItem(7);
+	L5T1.AddItem(1);
+	L5T1.AddItem(4);
+	L5T1.printList(head);
 	cin.get();
 	return 0;
 }
