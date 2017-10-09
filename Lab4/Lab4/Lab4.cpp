@@ -3,7 +3,7 @@
 /*------------------------------------------------------------------------------------------------------------------------------------------------
 NOTE TO GRADER:
 I ATTENDED LAB ON WENESDAY 9/27 BUT DID NOT GO TO MY ASSIGNED LAB ON THE 28TH SO I COULD STUDY FOR A MIDTERM. THEIR WAS NO ATTENDENCE SHEET PASSED AROUND ON WENESDAY SO NO ONE COULD SIGN IN
-Compiled on Visual Studion 2017 on Windows 10
+Compiled on Visual Studio 2017 on Windows 10
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 #include<array>
 #include<stdio.h>
@@ -65,7 +65,7 @@ public:
 			}
 		}
 	}
-	//functon to print the entire array begining to end after addition and sorting. 
+	//functon to print the entire array begining to end after addition and sorting.
 	void Print()
 	{
 		for (int j = 0; j < idx - 1; j++)
@@ -87,7 +87,7 @@ public:
 				cout << "Not sorted" << endl;
 		}
 	}
-	//if the array is empty return true 
+	//if the array is empty return true
 	bool IsEmpty()
 	{
 		if *array[0] = NULL;
@@ -194,7 +194,7 @@ public:
 			}
 		}
 	}
-	//functon to print the entire array begining to end after addition and sorting. 
+	//functon to print the entire array begining to end after addition and sorting.
 	void Print()
 	{
 		for (int j = MaxElm - 1; j > 0; j--)
@@ -252,7 +252,7 @@ int main()
 	}
 	else
 		cout << "Not sorted" << endl;
-	
+
 
 	/*
 	cout << "TASK 2 Sorted: " << endl;

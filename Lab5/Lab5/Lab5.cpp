@@ -1,6 +1,8 @@
-// Lab5.cpp : Defines the entry point for the console application.
-//
-
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+NOTE TO GRADER:
+Compiled on Visual Studio 2017 on Windows 10
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+#include<array>
 #include "stdafx.h"
 #include<string>
 #include<iostream>
@@ -8,12 +10,67 @@
 #include<time.h>
 using namespace std;
 
+template<typename N>
+struct node {
+	N info;
+	node<N> *next;
+};
+
 template<class X>
 class OrderedLinkList
 {
 private:
-public: 
-	
+	node<X>* head;
+	int nextitem;
+public:
+	OrderedLinkList() 
+	{
+		node<X>*head = 0;
+		int NextItem = 0;
+	}
+	void Additem(X item)
+	{
+		node<X>* ptr, Location;
+		if (head == 0)
+		{
+			ptr->info = item;
+			item->next = 0;
+			head = ptr;
+		}
+		else
+		{
+			Location = head;
+			while (item > head->info)
+			{
+				Location = Location->next;
+			}
+
+		}
+	}
+	X GetItem(X item)
+	{
+
+	}
+	bool IsInList(X item)
+	{
+
+	}
+	bool IsEmpty()
+	{
+
+	}
+	int Size()
+	{
+
+	}
+	X SeeNext()
+	{
+
+	}
+	X SeeAt()
+	{
+
+	}
 };
 
 class student
@@ -45,6 +102,9 @@ public:
 		*/
 		return 2017 - Byear;
 	}
+	bool operator == (const student& temp) {		if (this->Mnumber == temp.Mnumber)			return 1;		else			return 0;	}
+	bool operator > (const student& temp) {		if (this->Mnumber == temp.Mnumber)			return 1;		else			return 0;	}
+	bool operator < (const student& temp) {		if (this->Mnumber == temp.Mnumber)			return 1;		else			return 0;	}
 };
 
 int main()
