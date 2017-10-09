@@ -1,45 +1,60 @@
+// Lab5.cpp : Defines the entry point for the console application.
+//
+
 #include "stdafx.h"
+#include<string>
 #include<iostream>
-#include <stdio.h>
-#include <stdlib.h>
+#include<cmath>
+#include<time.h>
 using namespace std;
 
-template<typename X>
-struct Node
+template<class X>
+class OrderedLinkList
 {
-	X data;
-	Node *next;
+private:
+public: 
+	
 };
 
-template<class Y>
-class OrderedList
+class student
 {
+private:
+	string Fname, Lname;
+	int Byear, Mnumber;
+	float GPA;
 public:
-	void AddItem(Node<Y>)
+	student(string F_name, string L_name, int M_number, int B_year, float gpa = 0.0)
 	{
-		Node<Y>* new_node; 
-		*new_node->data = new_data;
-		*new_node->next = (*head_ref);
-		(*head_ref) = new_node;
+		Fname = F_name;
+		Lname = L_name;
+		Mnumber = M_number;
+		Byear = B_year;
+		GPA = gpa;
+	};
+	string GetName() 
+	{ 
+		string FullName = Fname + " " + Lname;
+		return FullName;
 	}
-	void printList(Node<Y> *node)
+	int GetMnumber() { return Mnumber; }
+	float Getgpa() { return GPA; }
+	int Getage() 
 	{
-		while (node != NULL)
-		{
-			printf(" %d ", node->data);
-			node = node->next;
-		}
+		/*
+		time_t currentTime = time(0);		float currentYear = (currentTime / 60 / 60 / 24 / 365) + 1970;		return currentYear - Byear;
+		*/
+		return 2017 - Byear;
 	}
 };
 
 int main()
 {
-	OrderedList<int> L5T1;
-	Node<int>* head = NULL;
-	L5T1.AddItem(7);
-	L5T1.AddItem(1);
-	L5T1.AddItem(4);
-	L5T1.printList(head);
+	student Matt = student("Matthew", "Kavanagh", 123, 1997, 3.5);
+	cout <<  Matt.GetName() << endl;
+	cout << Matt.GetMnumber() << endl;
+	cout << Matt.Getage() << endl;
+	cout << Matt.Getgpa() << endl;
 	cin.get();
-	return 0;
+    return 0;
 }
+
