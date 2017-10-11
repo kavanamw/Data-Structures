@@ -25,31 +25,53 @@ private:
 public:
 	OrderedLinkList() 
 	{
-		node<X>*head = 0;
+		node<X>*head = NULL;
 		int NextItem = 0;
 	}
 	void Additem(X item)
 	{
 		node<X>* ptr, Location;
+		Location = head;
+		ptr->info = item;
 		if (head == 0)
 		{
 			ptr->info = item;
-			item->next = 0;
+			item->next = NULL;
 			head = ptr;
 		}
 		else
 		{
 			Location = head;
-			while (item > head->info)
+			while (Location->next != NULL && (Location->next)->info < ptr->info)
 			{
 				Location = Location->next;
 			}
-
+			pre->next = Location->next;
+			Location->next = ptr;
 		}
 	}
 	X GetItem(X item)
 	{
-
+		node<X>* ptr, Location;
+		Location = head;
+		ptr->info = item;
+		ptr->info = item;
+		if (head == 0)
+		{
+			ptr->info = item;
+			item->next = NULL;
+			head = ptr;
+		}
+		else
+		{
+			Location = head;
+			while (Location->next != NULL && (Location->next)->info < ptr->info)
+			{
+				Location = Location->next;
+			}
+			pre->next = Location->next;
+			Location->next = ptr;
+		}
 	}
 	bool IsInList(X item)
 	{
