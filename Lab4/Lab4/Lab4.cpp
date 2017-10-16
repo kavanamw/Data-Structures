@@ -137,7 +137,7 @@ public:
 		for (int x = 0; x < MaxElm; x++)
 		{
 			if (*array[x] == Tarray[x])
-				return true;
+				return false;
 			else
 				return true;
 		}
@@ -147,10 +147,10 @@ public:
 template<class Y>
 class T2Orderedlist
 {
-private:
-	Y *array[MaxElm];
-public:
+protected:
+	Y *array[MaxElm] = { 0 };
 	int idx = MaxElm - 1;
+public:
 	//adds and sorts an item to the array of pointers from the back to front
 	void AddItem(Y TempInput)
 	{
@@ -163,13 +163,13 @@ public:
 			idx--;
 			return;
 		}
-		//idx++;
-		//sort array
+		else if (idx == 0)
+		{
+			return;
+		}
 		else
 		{
-			array[idx] = new Y;
-			*array[idx] = TempInput;
-			for (int t = idx - 1; t > 0; t--)
+			for (int t = MaxElm - 1; t > 0; t--)
 			{
 				if (*array[t] > TempInput)
 				{
@@ -183,21 +183,21 @@ public:
 					return;
 				}
 				//if element before is larger than current input
-				else if (t == idx - 1)
+				else if (t == idx + 1)
 				{
-					array[t + 1] = new Y;
-					*array[t + 1] = TempInput;
+					array[t - 1] = new Y;
+					*array[t - 1] = TempInput;
+					//cout << *array[idx] << " ";
 					idx--;
 					return;
 				}
-				cout << *array[t] << " ";
 			}
 		}
 	}
 	//functon to print the entire array begining to end after addition and sorting.
 	void Print()
 	{
-		for (int j = MaxElm - 1; j > 0; j--)
+		for (int j = 1; j < MaxElm; j++)
 		{
 			cout << *array[j] << " ";
 		}
@@ -253,8 +253,6 @@ int main()
 	else
 		cout << "Not sorted" << endl;
 
-
-	/*
 	cout << "TASK 2 Sorted: " << endl;
 	T2Orderedlist<int> L4T2;
 	L4T2.AddItem(6);
@@ -278,7 +276,6 @@ int main()
 	L4T2.AddItem(46);
 	L4T2.AddItem(19);
 	L4T2.Print();
-	*/
 
 	cin.get();
 	return 0;
