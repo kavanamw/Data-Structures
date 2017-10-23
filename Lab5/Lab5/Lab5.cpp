@@ -200,8 +200,8 @@ public:
 	int Getage() 
 	{
 		return 2017 - Byear;
-	}
-	bool operator == (const student& temp) {
+	}bool operator == (const student& temp) {
+	
 		if (this->Mnumber == temp.Mnumber)
 			return 1;
 		else
